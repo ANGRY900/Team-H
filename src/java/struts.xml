@@ -1,0 +1,87 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="Login" class="com.exavalu.models.User" method="doLogin">
+            <result name="SUCCESS">doctorhome.jsp</result>
+            <result name="FAILURE">healthcentre.jsp</result>
+        </action>
+        <action name="AdminLogin" class="com.exavalu.models.Admin" method="doAdminLogin">
+            <result name="SUCCESS">AdminHome.jsp</result>
+            <result name="FAILURE">healthcentre.jsp</result>
+        </action>          
+        <action name="Logout" class="com.exavalu.models.Doctor" method="doLogout">
+            <result name="SUCCESS">landingPage.jsp</result>
+        </action> 
+        <action name="SearchPatient" class="com.exavalu.models.Patient" method="doPatientSearch">
+            <result name="SUCCESS">searchpatient.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action> 
+        <action name="SearchPatientForPatient" class="com.exavalu.models.Patient" method="doPatientSearch">
+            <result name="SUCCESS">searchpatientforpatient.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action> 
+        <action name="AppointedPatient" class="com.exavalu.models.Patient" method="showPatientAppointed">
+            <result name="SUCCESS">appointments.jsp</result>
+            <result name="FAILURE">AdminHome.jsp</result>
+        </action> 
+        <action name="ShowDoctor" class="com.exavalu.models.Doctor" method="showDoctors">
+            <result name="SUCCESS">doctordetails.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action> 
+        <action name="SearchDoctor" class="com.exavalu.models.Doctor" method="doDoctorSearch">
+            <result name="SUCCESS">searchdoctor.jsp</result>
+            <result name="FAILURE">landingpage.jsp</result>
+        </action>
+        <action name="AddDoctor" class="com.exavalu.models.Doctor" method="addNewDoctor">
+            <result name="SUCCESS">doctors.jsp</result>
+            <result name="FAILURE">add-doctor.jsp</result>
+        </action>
+        <action name="EditPatientStatus" class="com.exavalu.models.Patient" method="doGetPatient">
+            <result name="SUCCESS">editpatient.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action>
+        <action name="savePatient" class="com.exavalu.models.Patient" method="doUpdatePatient">
+            <result name="SUCCESS">patientdetails.jsp</result>
+            <result name="FAILURE">editpatient.jsp</result>
+        </action>
+        <action name="EditDoctorSchedule" class="com.exavalu.models.Doctor" method="doGetDoctor">
+            <result name="SUCCESS">edit-schedule.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action>
+        <action name="saveSchedule" class="com.exavalu.models.Doctor" method="doUpdateDoctor">
+            <result name="SUCCESS">schedule.jsp</result>
+            <result name="FAILURE">doctors.jsp</result>
+        </action>
+        <action name="issuePrescription" class="com.exavalu.models.Prescription" method="doAddPrescription">
+            <result name="SUCCESS">doctorhome.jsp</result>
+            <result name="FAILURE">prescription.jsp</result>
+        </action>
+        <action name="GeneratePrescription" class="com.exavalu.models.Prescription" method="doAddPrescription">
+            <result name="SUCCESS">doctorhome.jsp</result>
+            <result name="FAILURE">prescription.jsp</result>
+        </action>
+        <action name="bookAppointment" class="com.exavalu.models.Appointment" method="doPatientAppointment">
+            <result name="SUCCESS">doctorhome.jsp</result>
+            <result name="FAILURE">appointment.jsp</result>
+        </action>
+        <action name="MakeAppointment" class="com.exavalu.models.Doctor" method="doGetDoctorByAppointment">
+            <result name="SUCCESS">appointment.jsp</result>
+            <result name="FAILURE">doctorhome.jsp</result>
+        </action>
+        <action name="SearchAppointment" class="com.exavalu.models.Appointment" method="doAppointmentSearch">
+            <result name="SUCCESS">searchappointment.jsp</result>
+            <result name="FAILURE">doctorhome.jsp</result>
+        </action>
+        <action name="AddRequirement" class="com.exavalu.models.Requirement" method="doLogRequirements">
+            <result name="SUCCESS">Requirements.jsp</result>
+            <result name="FAILURE">addRequirement.jsp</result>
+        </action>
+        <action name="ViewRequirement" class="com.exavalu.models.Donor" method="getAllRequirementList">
+            <result name="SUCCESS">requirementlist.jsp</result>
+        </action>
+    </package>
+</struts>
